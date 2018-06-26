@@ -9,6 +9,7 @@ import ReleaseTransformations._
 lazy val fpassembly = crossProject(JVMPlatform, JSPlatform)
     .withoutSuffixFor(JVMPlatform)
     .crossType(CrossType.Pure)
+    .in(file("."))
     .settings(commonSettings: _*)
     .settings(publishingSettings: _*)
     .jsSettings(

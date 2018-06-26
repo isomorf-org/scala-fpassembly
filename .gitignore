@@ -9,6 +9,8 @@
 .idea
 .project
 .settings
+.js
+.jvm
 bin/
 foundationRuntimePure
 hs_err_pid*.log
