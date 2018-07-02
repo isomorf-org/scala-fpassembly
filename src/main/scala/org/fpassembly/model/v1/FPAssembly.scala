@@ -1,4 +1,4 @@
-package org.fpassembly.v1
+package org.fpassembly.model.v1
 
 import org.fpassembly.v1.Reference._
 import org.fpassembly.v1.Type._
