@@ -1,7 +1,7 @@
 package org.fpassembly.model.v1
 
-import org.fpassembly.v1.Reference._
-import org.fpassembly.v1.Type._
+import org.fpassembly.model.v1.Reference._
+import org.fpassembly.model.v1.Type._
 
 sealed trait Element
 
