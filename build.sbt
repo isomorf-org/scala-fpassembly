@@ -25,7 +25,7 @@ lazy val fpassemblyJVM = fpassembly.jvm
 
 lazy val fpassemblyJS = fpassembly.js
 
-val organizationGlobal = "org.isomorf"
+val organizationGlobal = "org.fpassembly"
 
 val scalaVersionGlobal = "2.12.3"
 
