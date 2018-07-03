@@ -17,9 +17,6 @@ lazy val fpassembly = crossProject(JVMPlatform, JSPlatform)
         EclipseKeys.skipProject := true
       )
     )
-    .settings(
-//      libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
-    )
     
 lazy val fpassemblyJVM = fpassembly.jvm
 
@@ -112,35 +109,4 @@ enablePlugins(PreprocessPlugin)
 enablePlugins(SbtGhDocVerPlugin)
 
 preprocessVars in Preprocess := Map("VERSION" -> version.value)
-
-libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
-
-PB.targets in Compile := Seq(
-  scalapb.gen(flatPackage = true) -> (sourceManaged in Compile).value
-)
-
-PB.protoSources in Compile ++= Seq(target.value / "external-schemas" / "protobuf")
-
-val schemaVersions = Seq("1")
-
-val downloadProtobufSchemas = taskKey[Unit]("download protobuf schemas")
-
-downloadProtobufSchemas := {
-  schemaVersions.map({v =>
-    import java.nio.file.Paths
-    import java.nio.file.Files
-    import java.nio.file.StandardCopyOption
-    val path = Paths.get(s"schemas/v${v}/protobuf/fpassembly.proto")
-    val src = new java.net.URL(s"http://fpassembly.org/${path}")
-    val dest = (target.value / "external-schemas" / "protobuf" / "org" / "fpassembly" / "storage" / s"v${v}" / "fpassembly.proto").toPath
-    Files.createDirectories(dest.getParent)
-    val s = src.openStream
-    try {
-      Files.copy(s, dest, StandardCopyOption.REPLACE_EXISTING)
-    } finally {
-      s.close
-    }
-    dest.toFile
-  })
-}
 
