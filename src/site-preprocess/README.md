@@ -13,4 +13,4 @@ libraryDependencies += "org.fpassembly" %% "fpassembly" % "@VERSION@"
 
 ## Documentation
 
-[scaladocs](https://github.com/isomorf-org/scala-fpassembly/scaladocs/api/@VERSION@)
+[scaladocs](http://isomorf-org.github.io/scala-fpassembly/scaladocs/api/@VERSION@)
