@@ -8,9 +8,9 @@
 ![Maven Central](https://img.shields.io/maven-central/v/org.fpassembly/fpassembly_2.12.svg?style=for-the-badge)
 
 ```scala
-libraryDependencies += "org.fpassembly" %% "fpassembly" % "0.1.0"
+libraryDependencies += "org.fpassembly" %% "fpassembly" % "0.2.0"
 ```
 
 ## Documentation
 
-[scaladocs](http://isomorf-org.github.io/scala-fpassembly/scaladocs/api/0.1.0)
+[scaladocs](http://isomorf-org.github.io/scala-fpassembly/scaladocs/api/0.2.0)

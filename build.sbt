@@ -13,9 +13,7 @@ lazy val fpassembly = crossProject(JVMPlatform, JSPlatform)
     .settings(commonSettings: _*)
     .settings(publishingSettings: _*)
     .jsSettings(
-      Seq(
-        EclipseKeys.skipProject := true
-      )
+      EclipseKeys.skipProject := true
     )
     
 lazy val fpassemblyJVM = fpassembly.jvm
@@ -30,7 +28,9 @@ val crossScalaVersionsGlobal = Seq("2.11.11", scalaVersionGlobal)
 
 crossScalaVersions := crossScalaVersionsGlobal
 
-EclipseKeys.withSource := true
+EclipseKeys.withSource in ThisBuild := true
+
+EclipseKeys.eclipseOutput in ThisBuild := Some("./etarget")
   
 val commonSettings = Seq(
   organization := organizationGlobal,
